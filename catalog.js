@@ -10,4 +10,4 @@ const topicTag=(c,n)=>{const s=setOfTopic(c,n);return s?s.short+' · '+String(n-
 const allTopicTitles=c=>setsOf(c).flatMap(s=>s.topics);
 const cardSetLabel=c=>{const s=setByKey(course||'180',c&&c.set);return s?s.label:''};
 const hierarchyLabel=c=>{const s=setByKey(course||'180',c&&c.set);if(!s)return '';const p=s.label.split(' / ');return p.join('<br>')};
-const courseSummary=c=>c==='60'?('시리즈 A~E · 카드 '+(typeof A60DATA!=='undefined'?A60DATA.length:60)+'장'):('묶음 '+setsOf('180').length+'개 · 카드 '+(typeof data180!=='undefined'&&data180?data180.length:65)+'장');
+const courseSummary=c=>'카드 '+(c==='60'?(typeof A60DATA!=='undefined'?A60DATA.length:60):(typeof data180!=='undefined'&&data180?data180.length:65))+'장';

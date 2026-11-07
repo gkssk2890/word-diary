@@ -60,7 +60,7 @@ renderStudy=function(){
   $('#studyDeckNav')?.remove();
   const index=studyDeckIds.indexOf(current.id),total=studyDeckIds.length;
   const nav=document.createElement('div');nav.id='studyDeckNav';nav.className='studydecknav';
-  nav.innerHTML=`<button id="studyPrev" class="outline" aria-label="이전 암송 카드" ${index<=0?'disabled':''}>← <span>이전</span></button><div role="status" aria-live="polite"><b>${index>=0?index+1:1} / ${total||1}</b><small>좌우로 넘겨 다음 말씀</small></div><button id="studyNextCard" class="outline" aria-label="다음 암송 카드" ${index<0||index>=total-1?'disabled':''}><span>다음</span> →</button>`;
+  nav.innerHTML=`<button id="studyPrev" class="outline" aria-label="이전 암송 카드" ${index<=0?'disabled':''}>← <span>이전</span></button><div role="status" aria-live="polite"><b>${index>=0?index+1:1} / ${total||1}</b><small>좌우로 넘겨요</small></div><button id="studyNextCard" class="outline" aria-label="다음 암송 카드" ${index<0||index>=total-1?'disabled':''}><span>다음</span> →</button>`;
   body.before(nav);$('#studyPrev').onclick=()=>browseStudyCard(-1);$('#studyNextCard').onclick=()=>browseStudyCard(1);
   body.classList.remove('card-enter-next','card-enter-prev');
   if(studyDeckDirection){void body.offsetWidth;body.classList.add(studyDeckDirection>0?'card-enter-next':'card-enter-prev');}
@@ -74,4 +74,3 @@ $('#study').addEventListener('keydown',e=>{
 });
 $('#study').addEventListener('close',()=>{if(!sessionTotal){studyDeckIds=[];studyDeckSession=false;studyDeckCourse=null;}});
 const deckSheet=document.createElement('link');deckSheet.rel='stylesheet';deckSheet.href='study-deck.css';document.head.append(deckSheet);
-const touchIcon=document.createElement('link');touchIcon.rel='apple-touch-icon';touchIcon.href='felt-sheep-touch.png';document.head.append(touchIcon);

@@ -15,7 +15,7 @@ renderStudy=function(){
   $('#studyGuideSheep')?.remove();
   $('#studyBody').before(Object.assign(document.createElement('div'),{
     id:'studyGuideSheep',className:'study-sheep-guide',
-    innerHTML:`<img src="${MASCOT}" alt=""><span>${mode==='read'?'그림에서 말씀의 단서를 찾아봐요.':mode==='hint'?'한 글자씩 마음에 새겨요.':'떠오르는 말씀을 차근차근 적어봐요.'}</span>`
+    innerHTML:`<img src="${MASCOT}" alt=""><span>${mode==='read'?'그림에서 단서를 찾아봐요.':mode==='hint'?'한 글자씩 따라 써요.':'떠오르는 대로 적어봐요.'}</span>`
   }));
   const verse=current, selectedCourse=course, surface=$('#studyBody .studyswipesurface');
   if(mode==='read'){
@@ -29,10 +29,10 @@ renderStudy=function(){
   const words=[...new Set((verse.clauses||[verse.text]).flatMap(clause=>{
     const w=clause.trim().split(/\s+/);return w.length>=4?[w[0],w[Math.floor(w.length/2)]]:w.slice(0,1);
   }))].filter(Boolean).slice(0,10);
-  surface.innerHTML=`<section class="mission-writing"><h3>${copy?'한 글자씩 말씀을 새겨요':'키워드만 보고 말씀 전체를 써 보세요'}</h3>
+  surface.innerHTML=`<section class="mission-writing"><h3>${copy?'한 글자씩 말씀을 새겨요':'키워드를 보고 써 보세요'}</h3>
   ${copy?`<div class="mission-guide"><strong>따라쓰기 가이드 · 개역개정</strong><p>${esc(verse.text)}</p></div>`:`<ul class="mission-keywords" aria-label="본문 키워드">${words.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>`}
   <label for="missionInput">${copy?'필사':'통암기'} 입력</label><textarea id="missionInput" rows="5" maxlength="800" lang="ko" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="${copy?'위 말씀을 보고 따라 써 보세요':'기억나는 말씀을 처음부터 써 보세요'}"></textarea>
-  <p class="mission-note">띄어쓰기와 문장부호 차이는 틀린 것으로 보지 않아요.</p><div class="mission-controls"><button class="primary" id="missionCompare">원문과 대조하기</button>${copy?'<button class="outline" id="missionRecall">통암기 →</button>':''}</div><div id="missionFeedback"></div></section>`;
+  <p class="mission-note">띄어쓰기와 문장부호는 달라도 괜찮아요.</p><div class="mission-controls"><button class="primary" id="missionCompare">원문과 대조하기</button>${copy?'<button class="outline" id="missionRecall">통암기 →</button>':''}</div><div id="missionFeedback"></div></section>`;
   const input=$('#missionInput'),feedback=$('#missionFeedback'),compare=$('#missionCompare');
   input.value=drafts.get(key)||'';let composing=false;
   const capture=()=>{drafts.set(key,input.value);feedback.replaceChildren()};
@@ -153,8 +153,8 @@ const oldRender=render;
 render=function(){oldRender();bindHouses();};
 const entrance=document.createElement('div');
 entrance.id='missionEntrance';
-entrance.innerHTML=journeyHero('마을을 지나, 한 말씀씩 마음에.','<button class="journey-start" id="missionStart"><b>▶ START</b><span>여정 시작</span></button>');
-entrance.querySelector('.journeyhero').insertAdjacentHTML('beforeend',`<img class="entrance-sheep" src="${MASCOT}" alt="크림색 양 친구">`);
+entrance.innerHTML=journeyHero('','<button class="journey-start" id="missionStart"><b>마을로 입장</b></button>');entrance.querySelector('.journey-kicker')?.remove();entrance.querySelector('.journey-hero-copy p')?.remove();
+entrance.querySelector('.journeyhero').insertAdjacentHTML('beforeend',`<img class="entrance-sheep wave" src="sheep-wave.webp" alt="손을 흔들며 인사하는 양">`);
 document.body.prepend(entrance);document.body.classList.add('mission-entering');
 $('#missionStart').onclick=()=>{
   document.body.classList.remove('mission-entering');entrance.hidden=true;

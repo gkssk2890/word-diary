@@ -7,3 +7,21 @@
 .setsection{margin:0 0 28px}
 .setsection .sectionhead{margin-bottom:8px}
 .setsection .setzip{margin:0 0 14px}
+
+/* 홈 화면에 추가 안내 */
+.homeguide-link{display:block;margin:14px auto 0;padding:8px 14px;border:0;background:transparent;color:#2f4f3b;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+#planDialog .homeguide-link{margin:10px 0 0;text-align:left;padding:8px 0}
+.homeguide-link:focus-visible{outline:3px solid #e38464;outline-offset:2px}
+#homeGuide{max-width:min(440px,94vw);max-height:88vh;overflow:auto;border:2px solid #4b7557;border-radius:12px;background:#fffdf3;color:#2f3b33;padding:18px 18px 20px}
+#homeGuide::backdrop{background:rgba(30,50,40,.55)}
+#homeGuide .hg-head{display:flex;justify-content:space-between;align-items:center}
+#homeGuide h2{margin:0;font-size:21px}
+#homeGuide h3{margin:16px 0 6px;font-size:16px;color:#2f4f3b}
+#homeGuide ol,#homeGuide ul{margin:0;padding-left:20px;line-height:1.6}
+#homeGuide li{margin:4px 0}
+.hg-lead{margin:6px 0 10px}
+.hg-preview{display:flex;gap:14px;align-items:center;padding:10px;border-radius:10px;background:#e6f4fb}
+.hg-preview img{width:64px;height:64px;border-radius:14px}
+.hg-note{margin-top:14px;padding:10px 12px;border-radius:10px;background:#f6edc0}
+.hg-close{width:40px;height:40px;border:0;border-radius:8px;background:#e8e2c4;font-size:22px;cursor:pointer}
+.hg-ok{display:block;width:100%;margin-top:16px;min-height:46px;border:0;border-radius:8px;background:#4b7557;color:#fff7d6;font:inherit;font-weight:700;cursor:pointer}

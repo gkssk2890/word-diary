@@ -18,7 +18,7 @@ render=function(){
     $$('.statfoot').forEach(el=>{if(el.textContent.includes('성공 기록'))el.textContent='주제·주소·본문 모두 점검한 말씀'});
     $$('.statlabel').forEach(el=>{if(el.textContent.startsWith('이번 주 말씀'))el.firstChild.textContent='이번 주 전체 암송 '});
     $$('.topiccard .muted').forEach(el=>el.textContent=el.textContent.replace('혼자 암송 성공','주제·주소·본문 암송 성공'));
-    const note=$('.notebox');if(tab==='today'&&note)note.innerHTML='<b>대주제부터 본문까지, 모두 기억해요.</b>대주제 → 소주제 → 말씀 주소 → 본문 순서로 말하고 네 항목을 점검해요. 소주제의 모든 말씀을 통과해야 소주제 1개가 완료돼요.';
+    const note=$('.notebox');if(tab==='today'&&note)note.innerHTML='<b>본문까지 모두 기억해요.</b>대주제 → 소주제 → 말씀 주소 → 본문 순서로 말하고 네 항목을 점검해요. 소주제의 모든 말씀을 통과해야 소주제 1개가 완료돼요.';
     if(tab==='today'){
       const rows=$$('.dayrow span');
       ['첫 번째 소주제<br>대주제·소주제·주소를 본문과 함께 연결하기','첫 번째 소주제<br>네 가지를 모두 가리고 순서대로 말하기','두 번째 소주제<br>주제·주소·본문을 그림과 함께 연결하기','두 번째 소주제<br>네 가지를 모두 가리고 암송하기','두 소주제 함께 점검<br>대주제부터 본문까지 이어서 말하기'].forEach((s,i)=>{if(rows[i])rows[i].innerHTML=s});
