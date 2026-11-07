@@ -1,0 +1,20 @@
+/* Keep the illustration legible and wholly visible before the repeated body text. */
+.malmark{width:44px}.malmark img{width:44px;height:48px;object-fit:contain}.malwordmark{gap:11px}
+#study{scroll-behavior:auto;overscroll-behavior:contain}
+#study .modalhead{margin-bottom:12px}
+#study .studytabs{margin-bottom:0}
+.studydecknav{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:-28px;z-index:3;background:#fff;padding:12px 0;border-bottom:1px solid #d5e1cf;margin-bottom:18px}
+.studydecknav .outline{display:flex;align-items:center;justify-content:center;gap:9px;min-width:84px;min-height:44px;font-size:13px;background:#fff}
+.studydecknav>div{text-align:center;min-width:0}.studydecknav b{font-size:13px;font-weight:400;font-variant-numeric:tabular-nums;color:#3e594e}.studydecknav small{display:block;font-size:11px;color:#3e594e;line-height:1.5;margin-top:3px}
+#studyBody{overflow:hidden}
+.studyswipesurface{touch-action:pan-y;transform:translateX(var(--swipe-x,0px));user-select:text}
+.studyswipesurface.swiping{user-select:none;cursor:grabbing}
+.studyhero{display:flex;justify-content:center;align-items:flex-start;width:100%;margin:0 0 24px;background:#f3f7ed;border:1px solid #d5e1cf;border-radius:14px;overflow:hidden;cursor:grab}
+#study .studyhero .cardimage{display:block;width:auto;max-width:100%;height:auto;max-height:66dvh;object-fit:contain;margin:0;border-radius:0;user-select:none;-webkit-user-drag:none}
+.studyhero+.memoryhierarchy{margin-top:0}
+.card-enter-next{animation:study-enter-next 160ms cubic-bezier(.2,.7,.25,1)}
+.card-enter-prev{animation:study-enter-prev 160ms cubic-bezier(.2,.7,.25,1)}
+@keyframes study-enter-next{from{opacity:.55;transform:translateX(32px)}to{opacity:1;transform:translateX(0)}}
+@keyframes study-enter-prev{from{opacity:.55;transform:translateX(-32px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:760px){.malmark{width:40px}.malmark img{width:40px;height:44px}.studydecknav{top:-21px;gap:8px;padding:10px 0;margin-bottom:14px}.studydecknav .outline{min-width:72px;font-size:12px;gap:7px;padding:10px}.studydecknav small{font-size:10px}.studyhero{margin-bottom:20px;border-radius:10px}#study .studyhero .cardimage{width:100%;max-height:none}.studydecknav>div{flex:1}}
+@media(prefers-reduced-motion:reduce){.card-enter-next,.card-enter-prev{animation:none}.studyswipesurface{transform:none}}

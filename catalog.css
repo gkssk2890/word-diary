@@ -1,0 +1,9 @@
+/* 묶음(구역) 선택과 말씀 서랍의 묶음별 구역 */
+.village-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.village-tabs button{min-height:40px;padding:6px 14px;border:2px solid #4b7557;border-radius:6px;background:#fffdf3;color:#2f4f3b;font:inherit;font-weight:700;cursor:pointer}
+.village-tabs button.is-on{background:#4b7557;color:#fff7d6}
+.village-tabs button:focus-visible{outline:3px solid #e38464;outline-offset:2px}
+.village-chunks button{font-weight:600;border-style:dashed}
+.setsection{margin:0 0 28px}
+.setsection .sectionhead{margin-bottom:8px}
+.setsection .setzip{margin:0 0 14px}

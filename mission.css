@@ -1,0 +1,89 @@
+#missionEntrance[hidden],#study .studyactions[hidden],#housePanel[hidden]{display:none!important}
+.mission-entering>main,.mission-entering>aside{display:none}
+#missionEntrance{min-height:100dvh;display:grid;place-items:center;background:#e9f2df;padding:18px}
+#missionEntrance .journeyhero{width:min(780px,100%);min-height:min(660px,85dvh);margin:0}
+#missionEntrance .journey-hero-copy{align-self:start;padding-top:clamp(36px,10vh,92px);padding-bottom:160px}
+#missionEntrance .journeyhero h2{font-size:clamp(36px,9vw,76px);margin:15px 0 8px}
+#missionEntrance .journeyhero p{font-size:clamp(13px,3vw,17px);margin:0 0 22px}
+#missionEntrance .journey-start{min-height:50px;padding-inline:18px}
+#missionEntrance .journey-hill{height:23%;bottom:0}
+#missionEntrance .journey-ground{height:7%}
+#missionEntrance .hero-tree{bottom:7%;width:clamp(39px,9vw,75px)}
+#missionEntrance .hero-flower{bottom:7%;width:clamp(23px,5vw,39px)}
+.entrance-sheep{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);width:clamp(94px,24vw,168px);max-height:30%;object-fit:contain;pointer-events:none}
+.mission-home-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.mission-home-actions a{display:inline-flex;align-items:center;text-decoration:none}
+.house-map{margin:15px 0 25px;border:2px solid #52745d;background:#f5f8eb}
+.house-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;border-bottom:1px solid #becfae}
+.house-heading h2,.mission-review h2{margin:0;font-size:21px;line-height:1.4}
+.house-heading small,.house-heading p,.house-current{font-size:13px;color:#365244;margin:4px 0 0}
+.house-heading img{width:64px;height:67px;object-fit:contain}
+.house-current{padding:8px 15px;margin:0;font-weight:700;background:#fff2c7;border-bottom:1px solid #bead78}
+.house-field{position:relative;background:#c1dc96;background-image:linear-gradient(#a6c57b44 2px,transparent 2px),linear-gradient(90deg,#a6c57b44 2px,transparent 2px);background-size:38px 38px}
+.house-road,.house-road>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.house-tree{position:absolute;left:10%;width:26px}
+.house-tree.tree-right{left:auto;right:10%}
+.house-field ol{list-style:none;position:relative;margin:0;padding:0}
+.house-field li{height:82px;display:flex;align-items:center;padding:0 8px 0 calc(34% - 15px)}
+.house-field .house-left{justify-content:flex-end;padding:0 calc(34% - 15px) 0 8px}
+.house-pin{display:flex;align-items:center;gap:7px;text-align:left;min-width:0;max-width:100%;min-height:46px;background:transparent;padding:0;color:#20342c}
+.house-left .house-pin{flex-direction:row-reverse}
+.house-icon{flex:0 0 30px;width:30px}
+.house-pin>span:last-child{min-width:0;display:grid;gap:3px;padding:5px 8px;background:#fffdf0;border:2px solid #52745d;box-shadow:2px 2px #65845088}
+.house-pin strong{font-size:14px;line-height:1.3;word-break:keep-all;overflow-wrap:anywhere}
+.house-pin small{font-size:11px;color:#365244}
+.house-pin-current>span:last-child,.house-pin[aria-expanded=true]>span:last-child{background:#fff0b5;border-color:#644f2b}
+#housePanel{padding:15px;background:#fffdf5;border-top:2px solid #52745d}
+#housePanel h3,#housePanel p{margin:0 0 8px}
+#housePanel>div{display:flex;flex-wrap:wrap;gap:7px}
+.mission-review{margin:14px 0;padding:13px;border:1px solid #ceddcd;background:#edf5e7}
+.review-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.review-split p{background:#fffdf5;padding:8px;margin:8px 0;font-size:13px}
+.review-split span{display:block;color:#486157;margin-top:4px}
+.mission-review summary{cursor:pointer;min-height:44px;padding:10px 0}
+.mission-download{display:flex;align-items:center;justify-content:center;min-height:48px;width:100%;margin:-12px 0 20px;background:#244c38;color:#fffdf5;border:2px solid #183627;border-radius:5px;font-size:15px;font-weight:700;text-decoration:none}
+.mission-download:hover{background:#183627;color:#fffdf5}
+.mission-writing h3{margin:0 0 12px;font-size:18px;line-height:1.45}
+.mission-writing label{display:block;margin:12px 0 5px;font-size:14px;font-weight:700}
+.mission-guide,.mission-result{padding:12px 15px;background:#f2f3ef;border:1px solid #d6dcd1;border-radius:6px}
+.mission-guide strong,.mission-note{font-size:12px;color:#4d6155}
+.mission-guide p{margin:7px 0 0;color:#606662;font-size:16px;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+#missionInput{display:block;width:100%;min-height:145px;resize:vertical;font:inherit;font-size:17px;line-height:1.7;color:#172c22;caret-color:#172c22;background:#fff;border:1px solid #809585;border-radius:6px;padding:10px 12px}
+.mission-keywords{list-style:none;display:flex;gap:6px;flex-wrap:wrap;margin:0;padding:0}
+.mission-keywords li{font-size:14px;padding:4px 8px;background:#e6f2f4;border:1px solid #bad5d8;border-radius:5px}
+.mission-controls{display:flex;flex-wrap:wrap;gap:8px}
+.mission-result{margin-top:12px}
+.mission-result h4{margin:0}
+.mission-result p{margin:8px 0;overflow-wrap:anywhere}
+.mission-result.matched{background:#eaf5e3}
+.mission-result mark{background:#ffedb1;color:#402e17}
+.island-map{min-width:0;border-color:#315f70;border-radius:8px;overflow:hidden}
+.island-tools{display:flex;align-items:center;gap:6px;padding:4px 10px;background:#f1f8ef;border-bottom:1px solid #b1cbcc}
+.island-tools span{flex:1;min-width:0;font-size:12px;color:#365244}
+.island-tools button{min-width:44px;min-height:44px;padding:4px;font-weight:700}
+.island-scroll{width:100%;overflow-x:auto;overscroll-behavior-inline:contain;background:#277ca8;scrollbar-color:#79cad8 #175779;scrollbar-width:auto}
+.island-scroll:focus-visible{outline:3px solid #ffe5a2;outline-offset:-4px}
+.island-board{position:relative;width:max(100%,800px);aspect-ratio:850/468;isolation:isolate}
+.island-art{display:block;width:100%;height:100%}
+.island-board ol{position:absolute;inset:0;list-style:none;margin:0;padding:0;pointer-events:none}
+.island-board li{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-24px);width:156px;pointer-events:auto}
+.island-house{display:flex;align-items:center;flex-direction:column;gap:2px;position:relative;width:100%;min-height:44px;padding:0;background:none;color:#26362a}
+.island-house-icon{width:38px;height:35px;filter:drop-shadow(2px 3px #304b396e)}
+.island-house-icon svg{display:block;width:100%;height:100%}
+.island-label{display:grid;gap:1px;min-width:108px;max-width:156px;border:2px solid #406552;box-shadow:2px 3px #254d3866;background:#fff8e6;padding:3px 7px;text-align:center}
+.island-label small{font-size:10px;line-height:1.25;color:#3e5c4e;font-weight:700}
+.island-label strong{font-size:12px;line-height:1.28;word-break:keep-all;overflow-wrap:anywhere}
+.island-house:is(:hover,[aria-expanded=true]) .island-label{background:#fff0ba;border-color:#634928}
+.island-house.is-done .island-label{background:#e1f6ce;border-color:#327140}
+.island-house.is-current .island-label{background:#ffebac;border-color:#694e2e}
+.island-marker{position:absolute;top:-16px;left:calc(50% + 18px);width:47px;height:47px;object-fit:contain;filter:drop-shadow(1px 2px 1px #284c3e77)}
+.island-complete,.study-sheep-guide{display:flex;gap:8px;align-items:center}
+.island-complete img{width:42px;height:42px;object-fit:contain}
+.study-sheep-guide{margin:0 0 10px;color:#365244;font-size:13px}
+.study-sheep-guide img{width:31px;height:31px;object-fit:contain;flex:none}
+@media(max-width:480px){
+  #missionEntrance .journeyhero{min-height:min(590px,88dvh)}
+  .house-pin strong{font-size:13px}
+  .review-split{grid-template-columns:1fr;gap:0}
+  .review-split p{margin:6px 0}
+}
