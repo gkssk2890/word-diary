@@ -90,3 +90,11 @@ h1,h2,h3,.tw-hello-text b,.tw-village strong,.tw-cumhead b,.house-heading h2{tex
 
 .studydecknav small{white-space:nowrap;font-size:12px}
 #planPreview .previewrow{font-size:14px}
+
+.tw-node{border-color:var(--vc,#4b7557);background:#fffdf3}
+.tw-node svg{width:40px;height:38px}
+.tw-village{border-left:10px solid var(--vc,#4b7557)}
+.tw-stop.is-today .tw-node{background:#ffebac}
+.tw-vmap{border-top:6px solid var(--vc,#4b7557)}
+
+@media(max-width:340px){.tw-village strong{font-size:14.5px}.tw-vmap .house-heading h2{font-size:17px}.tw-village{padding:8px 9px}}
