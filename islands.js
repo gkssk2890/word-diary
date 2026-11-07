@@ -19,9 +19,9 @@ const TH={
  'A':{name:'새로운 삶',icon:'sprout',sea:'#4fb7d8',wave:'#c9f2f7',shallow:'#2a8cb0',ring:'#8fdbe6',sand:'#f4e6b0',base:'#b6e07a',patch:'#d4f09a',g1:'#9ed25f',g2:'#d9f5a0',route:['#bb9760','#efd29a','#fbebc4'],tree:['#3f8a3f','#6fc254','#a9e275'],trunk:'#8a6038',rock:['#7c8a6e','#b0bd9c','#d9e3c4'],flower:'#ffb7d0',accent:'#6fc254',
   shape:{cx:428,cy:236,rx:362,ry:165,rot:.04,h:[[4,.05,.2],[2,.04,1]]},stops:[[130,304],[252,198],[376,302],[500,190],[626,292],[736,190]],
   land:['sproutbig','sproutbig','butterfly','butterfly'],scatter:{tree:.2,sprout:.45,flower:.3,rock:.05},seaDeco:['bubble']},
- 'B':{name:'그리스도를 전파함',icon:'lighthouse',sea:'#2fa8b8',wave:'#bff0ee',shallow:'#13788a',ring:'#7fdcd8',sand:'#f6e2a4',base:'#a9d77a',patch:'#f1e0a4',g1:'#92c866',g2:'#cbe898',route:['#c9a45e','#f3dfa6','#fff3cc'],tree:['#2f7d4c','#4fae62','#8fd68a'],trunk:'#a1713f',rock:['#8a8f84','#bfc3b3','#e6e8d4'],flower:'#ffd1a6',accent:'#d8473f',
+ 'B':{name:'그리스도를 전파함',icon:'letter',sea:'#2fa8b8',wave:'#bff0ee',shallow:'#13788a',ring:'#7fdcd8',sand:'#f6e2a4',base:'#a9d77a',patch:'#f1e0a4',g1:'#92c866',g2:'#cbe898',route:['#c9a45e','#f3dfa6','#fff3cc'],tree:['#2f7d4c','#4fae62','#8fd68a'],trunk:'#a1713f',rock:['#8a8f84','#bfc3b3','#e6e8d4'],flower:'#ffd1a6',accent:'#d8473f',
   shape:{cx:432,cy:232,rx:368,ry:178,rot:-.03,h:[[1,.1,1.57],[2,.1,.4],[5,.04,.8]]},stops:[[130,176],[270,132],[424,186],[562,142],[702,190],[742,318]],
-  land:['lighthouse','palm','palm','palm'],scatter:{palm:.3,tree:.15,rock:.15,flower:.2,shell:.2},seaDeco:['boat','boat','boat','bird']},
+  land:['mailbox','palm','palm','palm'],scatter:{palm:.3,tree:.15,rock:.1,flower:.2,shell:.1,letter:.15},seaDeco:['boat','boat','boat','bird']},
  'C':{name:'하나님을 의뢰함',icon:'fort',sea:'#4a7fa6',wave:'#a9cde4',shallow:'#2c557a',ring:'#7eaed0',sand:'#d8d2bc',base:'#8fb56a',patch:'#a9a98a',g1:'#7ea45a',g2:'#b4d08a',route:['#7f7867','#cdc6b2',' #ebe5d3'.trim()],tree:['#2f5f3e','#4f8a52','#86b86d'],trunk:'#6e4c30',rock:['#59636c','#909ba2','#c8d0d4'],flower:'#fff0a0',accent:'#8d99a3',
   shape:{cx:430,cy:236,rx:335,ry:195,rot:0,h:[[6,.07,.4],[3,.07,1.7],[9,.03,.1]]},stops:[[130,292],[262,176],[428,118],[594,176],[722,292],[428,352]],
   land:['fort','boulder','boulder','boulder'],scatter:{pine:.25,rock:.4,flower:.1,tree:.15,boulder:.1},seaDeco:['bird']},
@@ -70,12 +70,14 @@ const SYM={
  mountain:'<g shape-rendering="crispEdges"><path fill="#6f7d87" d="M-36 0L-6-38H6L36 0Z"/><path fill="#55636f" d="M6-38L36 0H10Z"/><path fill="#ffffff" d="M-10-28L-6-38H6L11-26H5L0-31L-5-24Z"/><path fill="#8f9ca6" d="M-26 0L-14-16 -8 0Z"/></g>',
  mountainS:'<g shape-rendering="crispEdges"><path fill="#78868f" d="M-22 0L-4-24H4L22 0Z"/><path fill="#5d6b76" d="M4-24L22 0H8Z"/><path fill="#fff" d="M-6-18L-4-24H4L7-16H2L0-19L-3-15Z"/></g>',
  lake:'<g shape-rendering="crispEdges"><path fill="#2d6fb0" d="M-30 0H30V-6H24V-12H-24V-6H-30Z"/><path fill="#6fb4e6" d="M-22-2H16V-5H-22zM-10-9H14V-11H-10z"/></g>',
- heart:'<g shape-rendering="crispEdges"><path fill="#ee6f8a" d="M-9-5h6v-4h4v4h6v6h-4v4h-4v4h-4v-4h-4v-4h-4z"/><path fill="#ffb3c1" d="M-6-6h3v3h-3z"/></g>',
+ heart:'<g shape-rendering="crispEdges"><path fill="#ee6f8a" d="M-10.5 -24h6v3h-6zM4.5 -24h6v3h-6zM-13.5 -21h12v3h-12zM1.5 -21h12v3h-12zM-13.5 -18h27v3h-27zM-13.5 -15h27v3h-27zM-10.5 -12h21v3h-21zM-7.5 -9h15v3h-15zM-4.5 -6h9v3h-9zM-1.5 -3h3v3h-3z"/><path fill="#d4526f" d="M4.5 -18h9v3h-9zM4.5 -15h9v3h-9zM4.5 -12h6v3h-6zM-7.5 -9h15v3h-15zM-4.5 -6h9v3h-9zM-1.5 -3h3v3h-3z"/><path fill="#ffc0cf" d="M-10.5 -24h6v3h-6zM-13.5 -21h6v3h-6zM1.5 -21h3v3h-3z"/></g>',
  heartbed:'<g shape-rendering="crispEdges"><path fill="#7a5a3a" d="M-24 0H24V-5H-24Z"/><path fill="#ee6f8a" d="M-20-5h6v-5h4v5h4v-5h4v5h4v-5h4v5h4v-5h6v5H-20z" opacity=".95"/><path fill="#fff" d="M-16-8h2v2h-2zM-2-8h2v2h-2zM10-8h2v2h-2z"/></g>',
  house:'<g shape-rendering="crispEdges"><path fill="#f6e4cc" d="M-14 0V-14H14V0Z"/><path fill="#e07a6a" d="M-18-14L0-28 18-14Z"/><path fill="#a86a52" d="M-3 0v-9h6v9z"/><path fill="#7fc0d8" d="M-11-10h5v5h-5zM6-10h5v5H6z"/></g>',
  sproutbig:'<g shape-rendering="crispEdges"><path fill="#4b9a3c" d="M-2 0h4v-18h-4z"/><path fill="#7ccc54" d="M-16-18h14v-6h-6v-4h-8zM2-22h14v-6h-6v-4H2z"/><path fill="#b4ec7a" d="M-12-22h6v-3h-6zM6-26h6v-3H6z"/><path fill="#8a6038" d="M-12 0h24v4h-24z"/></g>',
  sprout:'<g shape-rendering="crispEdges"><path fill="#3f9a46" d="M-1 0h2v-9h-2z"/><path fill="#79c957" d="M-7-9h6v-4h-6zM1-11h7v-4H1z"/></g>',
  butterfly:'<g shape-rendering="crispEdges"><path fill="#ffb347" d="M-8-8h6v-6h-4zM2-8h6l2-6H4z"/><path fill="#ff7f50" d="M-6-6h4v4h-4zM2-6h4v4H2z"/><path fill="#4a3a30" d="M-1-12h2v10h-2z"/></g>',
+ letter:'<g shape-rendering="crispEdges"><path fill="#8a5a36" d="M-15 0V-23H15V0Z"/><path fill="#fff6e0" d="M-13-2V-21H13V-2Z"/><path fill="#e2c791" d="M-13-21L0-9 13-21V-17L0-5-13-17Z"/><path fill="#d8473f" d="M-3-14h6v6h-6z"/><path fill="#ff8f7a" d="M-3-14h3v3h-3z"/></g>',
+ mailbox:'<g shape-rendering="crispEdges"><path fill="#6a4528" d="M-2 0h4v-14h-4z"/><path fill="#2f6aa8" d="M-13-14V-30H13V-14Z"/><path fill="#5f9ad8" d="M-13-30H13V-26H-13z"/><path fill="#fff6e0" d="M-7-27h14v7h-14z"/><path fill="#d8473f" d="M-2-25h4v3h-4z"/><path fill="#8a5a36" d="M13-26h3v-12h-3z"/><path fill="#d8473f" d="M16-38h8v6h-8z"/></g>',
  lighthouse:'<g shape-rendering="crispEdges"><path fill="#4a3a38" d="M-6 0H6V-3H-6Z"/><path fill="#f6f1e6" d="M-5-3H5L3-34H-3Z"/><path fill="#d8473f" d="M-4-10H4L4-16H-4zM-3-24H3V-29H-3z"/><path fill="#ffd95a" d="M-4-40h8v6h-8z"/><path fill="#4a3a38" d="M-6-42h12v3h-12z"/><path fill="#fff4b0" opacity=".6" d="M8-39h14v3H8zM-22-39h14v3h-14z"/></g>',
  palm:'<g shape-rendering="crispEdges"><path fill="#9e6b3d" d="M-1 0h4v-10h-3v-8h3v-6h-3v-4h-3v10h3v8h-2v10z"/><path fill="#3f9a52" d="M-16-24h12v-4h8v4h12v4h-9v-4H-3v4h-9v4h-8z"/><path fill="#6cc878" d="M-12-26h8v-2h-8zM4-26h8v-2H4z"/></g>',
  shell:'<g shape-rendering="crispEdges"><path fill="#f7d6c8" d="M-5 0h10v-4h-3v-3h-4v3h-3z"/><path fill="#e8a99a" d="M-1-4h2v4h-2z"/></g>',
@@ -132,11 +134,11 @@ function villageScenery(key){
    <path d="${route}" fill="none" stroke="${t.route[0]}" stroke-width="28" stroke-linejoin="round" stroke-linecap="round"/>
    <path d="${route}" fill="none" stroke="${t.route[1]}" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
    <path d="${route}" fill="none" stroke="${t.route[2]}" stroke-width="4" stroke-dasharray="4 16" stroke-linecap="square"/>
-   ${items.map(([kd,x,y,s])=>use(kd,x,y,['cross','mountain','fort','lighthouse','windmill','lake'].includes(kd)?1:s)).join('')}
+   ${items.map(([kd,x,y,s])=>use(kd,x,y,['cross','mountain','fort','lighthouse','mailbox','windmill','lake'].includes(kd)?1:s)).join('')}
   </g></svg>`;
 }
 globalThis.villageScenery=villageScenery;
 globalThis.villageTheme=themeOf;
 globalThis.villageStops=key=>resolve(key).stops;
-globalThis.villageIconSym=(key)=>{const t=themeOf(key),k='ic'+String(key).replace(/[^A-Za-z0-9]/g,'');const map={cross:'cross',flame:'flame',mountain:'mountain',heart:'heart',sprout:'sproutbig',lighthouse:'lighthouse',fort:'fort',autumn:null,apple:null};let g=SYM[map[t.icon]];if(!g){const col=t.icon==='autumn'?{t0:'#a8482a',t1:'#df7b2e',t2:'#f5b648'}:{t0:'#3f7a3a',t1:'#62a448',t2:'#98d068'};g=T(k+'t',Object.assign({dark:'#1d3a1a',trunk:t.trunk},col),t.icon==='apple').replace('id="'+k+'t"','')}return '<svg viewBox="-30 -50 60 56" aria-hidden="true">'+g+'</svg>'};
+globalThis.villageIconSym=(key)=>{const t=themeOf(key),k='ic'+String(key).replace(/[^A-Za-z0-9]/g,'');const map={cross:'cross',flame:'flame',mountain:'mountain',heart:'heart',sprout:'sproutbig',letter:'letter',lighthouse:'lighthouse',fort:'fort',autumn:null,apple:null};let g=SYM[map[t.icon]];if(!g){const col=t.icon==='autumn'?{t0:'#a8482a',t1:'#df7b2e',t2:'#f5b648'}:{t0:'#3f7a3a',t1:'#62a448',t2:'#98d068'};g=T(k+'t',Object.assign({dark:'#1d3a1a',trunk:t.trunk},col),t.icon==='apple').replace('id="'+k+'t"','')}const VB={autumn:'-24 -28 48 48',apple:'-24 -28 48 48',letter:'-18 -26 36 30',heart:'-17 -28 34 32',flame:'-14 -38 28 42',sprout:'-18 -32 36 38',lighthouse:'-24 -46 48 52',fort:'-26 -46 52 50',cross:'-30 -56 60 62',mountain:'-38 -42 76 46'};return '<svg viewBox="'+(VB[t.icon]||'-30 -50 60 56')+'" aria-hidden="true">'+g+'</svg>'};
 })();
