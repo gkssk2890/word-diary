@@ -26,10 +26,8 @@ renderStudy=function(){
     $('#studyNext').textContent='필사하기 →';$('#studyNext').onclick=()=>stepTo('hint');return;
   }
   const copy=mode==='hint',key=course+':'+verse.id+':'+mode;
-  const words=[...new Set((verse.clauses||[verse.text]).flatMap(clause=>{
-    const w=clause.trim().split(/\s+/);return w.length>=4?[w[0],w[Math.floor(w.length/2)]]:w.slice(0,1);
-  }))].filter(Boolean).slice(0,10);
-  surface.innerHTML=`<section class="mission-writing"><h3>${copy?'한 글자씩 말씀을 새겨요':'키워드를 보고 써 보세요'}</h3>
+  const words=keywordsFor(course,verse);
+  surface.innerHTML=`<section class="mission-writing"><h3>${copy?'한 글자씩 말씀을 새겨요':'핵심 단어를 보고 써 보세요'}</h3>
   ${copy?`<div class="mission-guide"><strong>따라쓰기 가이드 · 개역개정</strong><p>${esc(verse.text)}</p></div>`:`<ul class="mission-keywords" aria-label="본문 키워드">${words.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>`}
   <label for="missionInput">${copy?'필사':'통암기'} 입력</label><textarea id="missionInput" rows="5" maxlength="800" lang="ko" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="${copy?'위 말씀을 보고 따라 써 보세요':'기억나는 말씀을 처음부터 써 보세요'}"></textarea>
   <p class="mission-note">띄어쓰기와 문장부호는 달라도 괜찮아요.</p><div class="mission-controls"><button class="primary" id="missionCompare">원문과 대조하기</button>${copy?'<button class="outline" id="missionRecall">통암기 →</button>':''}</div><div id="missionFeedback"></div></section>`;
