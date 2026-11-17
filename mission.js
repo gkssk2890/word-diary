@@ -21,7 +21,7 @@ renderStudy=function(){
   if(mode==='read'){
     const art=surface.querySelector('.studyhero');
     if(art){
-      const b=document.createElement('a');b.className='mission-download';b.textContent='↓ 이미지 다운로드';b.href=verse.orig;b.download=`${verse.ref.replaceAll(':','-')}_일러스트카드${verse.orig.slice(verse.orig.lastIndexOf('.'))}`;art.after(b);
+      const b=document.createElement('a');b.className='mission-download';b.textContent='↓ 이미지 다운로드';b.href=verse.orig;b.download=`${verse.ref.replaceAll(':','-')}_일러스트카드${verse.orig.slice(verse.orig.lastIndexOf('.'))}`;if(!verse.ph)art.after(b);
     }
     $('#studyNext').textContent='필사하기 →';$('#studyNext').onclick=()=>stepTo('hint');return;
   }
